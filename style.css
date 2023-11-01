@@ -1,0 +1,31 @@
+#gridder {
+    display: flex;
+    background-color: khaki;
+    width: 960px;
+    height: 960px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items:normal;
+    
+}
+
+.child {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(0, 0, 0);
+    flex: 20px;
+}
+
+#playerPanel {
+display: inline-block;
+}
+
+.filler {
+    width: 100px;
+    height: 100px;
+}
+
+div:hover {
+ background-color: white;
+}

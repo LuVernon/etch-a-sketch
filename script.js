@@ -1,19 +1,28 @@
 let grid = document.querySelector("#gridder");
 let button = document.querySelector("#ask");
 
+function rand () {
+    return Math.floor(Math.random()*(256-1))+1;
+};
+
 function formate (size) {
     let ratios = 960/size;  
     let div = document.createElement("div");
-    if (grid.childNodes.length > 0) {
+    if (grid.childElementCount > 0) {
             grid.replaceChildren();
     }
     div.style.height = ratios + "px"; 
     div.style.width = ratios + "px"; 
     div.style.flex = ratios + "px"; 
     div.classList.add('child');
-    div.addEventListener("mouseenter", ()=>{console.log("hello")});
     for (let i=0; i<size*size; i++) {
        grid.appendChild(div.cloneNode(true));
+    }
+    let gc = grid.children;
+    for (let i=0; i<grid.childElementCount; i++) {
+        gc[i].addEventListener("mouseover", ()=>{
+            gc[i].style.backgroundColor = `rgb(${rand()}, ${rand()}, ${rand()})`;
+        });
     }
 };
 

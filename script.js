@@ -15,7 +15,7 @@ function formate (size) {
 
 button.addEventListener("click", () => {
     let customSize = window.prompt("How many squares do you want per side?");
-    if (customSize >= 101) {
+    if (customSize >= 101 || isNaN(customSize)) {
         window.alert("Please pick a number below from 1-100.");
         return;
     };

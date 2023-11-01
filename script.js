@@ -11,6 +11,7 @@ function formate (size) {
     div.style.width = ratios + "px"; 
     div.style.flex = ratios + "px"; 
     div.classList.add('child');
+    div.addEventListener("mouseenter", ()=>{console.log("hello")});
     for (let i=0; i<size*size; i++) {
        grid.appendChild(div.cloneNode(true));
     }

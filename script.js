@@ -2,7 +2,7 @@ let grid = document.querySelector("#gridder");
 let button = document.querySelector("#ask");
 
 function rand () {
-    return Math.floor(Math.random()*(256-1))+1;
+    return `rgb(${Math.floor(Math.random() * 255) + 1}, ${Math.floor(Math.random() * 255) + 1}, ${Math.floor(Math.random() * 255) + 1})`;
 };
 
 function formate (size) {
@@ -14,14 +14,31 @@ function formate (size) {
     div.style.height = ratios + "px"; 
     div.style.width = ratios + "px"; 
     div.style.flex = ratios + "px"; 
-    div.classList.add('child');
     for (let i=0; i<size*size; i++) {
        grid.appendChild(div.cloneNode(true));
     }
     let gc = grid.children;
     for (let i=0; i<grid.childElementCount; i++) {
         gc[i].addEventListener("mouseover", ()=>{
-            gc[i].style.backgroundColor = `rgb(${rand()}, ${rand()}, ${rand()})`;
+            if (grid.childNodes[i].style.backgroundColor != "") {
+                let current = grid.childNodes[i].style.backgroundColor;
+                let r = current.slice(4, current.indexOf(",")); 
+                let g = current.slice(current.indexOf(" ")+1, current.lastIndexOf(",")); 
+                let b = current.slice(current.lastIndexOf(" ")+1, current.indexOf(")"));
+                
+                if (r < 3 && g < 3 && b < 3) {
+                    r = 0; 
+                    g = 0; 
+                    b = 0; 
+                    grid.childNodes[i].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                    return;
+                }
+            
+                grid.childNodes[i].style.backgroundColor = `rgb(${r-(r/4)}, ${g-(g/4)}, ${b-(b/4)})`; 
+            }
+            else {
+                gc[i].style.backgroundColor = rand();  
+            }
         });
     }
 };
@@ -34,3 +51,14 @@ button.addEventListener("click", () => {
     };
     formate(customSize);
 });
+
+/* 
+function silly() {
+    let gridSize = Number(grid.childElementCount);
+    return Number(Math.floor(Math.random()*gridSize)+1);
+};
+
+setInterval(()=>{
+    grid.childNodes[silly()].style.backgroundColor = `rgb(${rand()}, 0,${rand()} `;
+},100);
+*/

@@ -2,7 +2,7 @@ let grid = document.querySelector("#gridder");
 let button = document.querySelector("#ask");
 
 function rand () {
-    return `rgb(${Math.floor(Math.random() * 255) + 1}, ${Math.floor(Math.random() * 255) + 1}, ${Math.floor(Math.random() * 255) + 1})`;
+    return `hsl(${Math.floor(Math.random() * 360) + 1}, 100%, 50%`;
 };
 
 function formate (size) {

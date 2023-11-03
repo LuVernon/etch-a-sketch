@@ -1,5 +1,5 @@
 body {
-    background-color:hsl(280, 100%, 95%);
+    background-color:hsl(282, 26%, 25%);
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -13,10 +13,11 @@ button {
 }
 
 #gridder {
+    margin-top: 150px;
     display: flex;
     background-color: rgb(255, 255, 255); 
-    width: 960px;
-    height: 960px;
+    width: 500px;
+    height: 500px;
     flex-wrap: wrap;
     flex-shrink: 0;
     flex-grow: 0;

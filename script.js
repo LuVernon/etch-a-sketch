@@ -6,7 +6,7 @@ function rand () {
 };
 
 function formate (size) {
-    let ratios = 960/size;  
+    let ratios = 500/size;  
     let div = document.createElement("div");
     if (grid.childElementCount > 0) {
             grid.replaceChildren();

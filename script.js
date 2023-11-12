@@ -30,7 +30,7 @@ function formate (size) {
                 else if (rainbow.checked == false) {
                     gc[i].style.backgroundColor = "black";
                 }
-                else if (gc[i].style.backgroundColor != "" && gc[i].style.backgroundColor != "black" && shading.checked == true) {
+                else if (gc[i].style.backgroundColor != "" && gc[i].style.backgroundColor != "black" && gc[i].style.backgroundColor != "white" && shading.checked == true) {
                     let current = gc[i].style.backgroundColor;
                     let r = current.slice(4, current.indexOf(",")); 
                     let g = current.slice(current.indexOf(" ")+1, current.lastIndexOf(",")); 

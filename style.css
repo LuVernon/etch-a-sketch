@@ -1,25 +1,52 @@
 body {
     background-color:hsl(282, 26%, 25%);
     align-items: center;
+    justify-content: center;
     display: flex;
-    flex-direction: column;
+    gap: 10px;
+    flex-direction: row;
 }
 
 #group {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
+    width: 150px;
+}
+
+#frame {
+    background-color: rgb(123, 87, 214);
+    display: flex;
+    width: 550px;
+    height: 550px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+    border-radius: 30px;
+    flex-shrink: 0;
+}
+
+.boxes {
+    background-color: rgb(123, 87, 214);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: monospace; 
+    font-weight: 400;
+    font-size: 11px;
 }
 
 button {
-    background-color: yellow;
     font-family: monospace;
     border: none;
-    height: 20px;
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(123, 87, 214);
 }
 
 #gridder {
-    margin-top: 150px;
     display: flex;
     background-color: rgb(255, 255, 255); 
     width: 500px;

@@ -2,6 +2,8 @@ let grid = document.querySelector("#gridder");
 let askSize = document.querySelector("#ask");
 let rainbow = document.querySelector("#rainbow"); 
 let clearCanvas = document.querySelector("#clear");
+let shading = document.querySelector("#shading");
+let eraser = document.querySelector("#rubber");
 
 function rand () {
     return `hsl(${Math.floor(Math.random() * 361)}, 100%, 50%`;
@@ -22,10 +24,13 @@ function formate (size) {
     let gc = grid.children;
         for (let i=0; i<grid.childElementCount; i++) {
             gc[i].addEventListener("mouseover", ()=>{
-                if (rainbow.checked == false) {
+                if (eraser.checked == true) {
+                    gc[i].style.backgroundColor = "white";
+                }
+                else if (rainbow.checked == false) {
                     gc[i].style.backgroundColor = "black";
                 }
-                else if (gc[i].style.backgroundColor != "" && gc[i].style.backgroundColor != "black") {
+                else if (gc[i].style.backgroundColor != "" && gc[i].style.backgroundColor != "black" && shading.checked == true) {
                     let current = gc[i].style.backgroundColor;
                     let r = current.slice(4, current.indexOf(",")); 
                     let g = current.slice(current.indexOf(" ")+1, current.lastIndexOf(",")); 

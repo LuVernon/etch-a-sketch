@@ -5,6 +5,12 @@ body {
     flex-direction: column;
 }
 
+#group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 button {
     background-color: yellow;
     font-family: monospace;
